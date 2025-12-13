@@ -23,6 +23,16 @@ src/components/DailyVideoCall.tsx
 src/services/tavus*.ts
 src/services/tavus*.js
 
+# Slither / security tooling
+slither-report.json
+slither-report.sarif
+slither.db.json
+sarif/
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

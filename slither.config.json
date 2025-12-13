@@ -1,18 +1,12 @@
 {
-  "filter_paths": "node_modules|lib|out|artifacts|cache|test|script",
+  "exclude_dependencies": true,
   "exclude_informational": true,
   "exclude_low": false,
   "exclude_medium": false,
   "exclude_high": false,
-  "exclude_optimization": true,
-  "exclude_dependencies": true,
-  "detectors_to_exclude": [
-    "naming-convention",
-    "solc-version"
-  ],
-  "printers": [],
-  "disable_color": false,
-  "checklist": true,
-  "markdown_root": ".",
-  "compile_force_framework": "foundry"
+  "fail_on": "medium",
+  "filter_paths": "node_modules|dist|build|out|coverage|\.next|\.git|lib|vendor|artifacts|cache",
+  "json": "slither-report.json",
+  "sarif": "slither-report.sarif",
+  "disable_color": true
 }

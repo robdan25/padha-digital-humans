@@ -2,9 +2,8 @@ name: Slither Static Analysis
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ main, master ]
   workflow_dispatch:
 
 jobs:
@@ -15,10 +14,8 @@ jobs:
       security-events: write
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          submodules: recursive
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -28,64 +25,20 @@ jobs:
       - name: Install Slither
         run: |
           python -m pip install --upgrade pip
-          python -m pip install "slither-analyzer>=0.10.0" "crytic-compile>=0.3.0"
-          slither --version
+          pip install slither-analyzer
 
-      # Foundry setup (if foundry.toml exists)
-      - name: Install Foundry
-        if: hashFiles('foundry.toml') != ''
-        uses: foundry-rs/foundry-toolchain@v1
-        with:
-          version: nightly
-
-      - name: Show Foundry version
-        if: hashFiles('foundry.toml') != ''
+      # Optional but recommended: solc-select lets Slither match compiler versions.
+      - name: Install solc-select
         run: |
-          forge --version
-          cast --version
+          pip install solc-select
+          solc-select install 0.8.20 || true
+          solc-select use 0.8.20 || true
 
-      - name: Install Foundry dependencies
-        if: hashFiles('foundry.toml') != ''
-        run: forge install --no-commit
-
-      # Hardhat/Node setup (if package.json exists)
-      - name: Set up Node.js
-        if: hashFiles('package.json') != ''
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install Node dependencies
-        if: hashFiles('package.json') != ''
-        run: npm ci
-
-      # Run Slither analysis
-      - name: Run Slither
+      - name: Run Slither (SARIF)
         run: |
-          slither . \
-            --filter-paths "node_modules|lib|out|artifacts|cache|test|script" \
-            --exclude-dependencies \
-            --exclude-informational \
-            --exclude-optimization \
-            --fail-medium \
-            --json slither-report.json \
-            --checklist \
-            --markdown-root .
-        continue-on-error: true
+          make slither-sarif
 
-      # Upload results
-      - name: Upload Slither results
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: slither-report
-          path: slither-report.json
-
-      # Generate GitHub Security Advisory (optional)
-      - name: Upload to GitHub Security
+      - name: Upload SARIF
         uses: github/codeql-action/upload-sarif@v3
-        if: always()
         with:
-          sarif_file: results.sarif
-        continue-on-error: true
+          sarif_file: slither-report.sarif
