@@ -12,6 +12,17 @@ dist
 dist-ssr
 *.local
 
+# Environment variables (contain API keys)
+.env
+.env.*
+!.env.example
+
+# Tavus integration (internal use only)
+src/components/TavusAvatarPanel.tsx
+src/components/DailyVideoCall.tsx
+src/services/tavus*.ts
+src/services/tavus*.js
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
