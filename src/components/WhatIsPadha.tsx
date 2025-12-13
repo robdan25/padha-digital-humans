@@ -24,8 +24,8 @@ const WhatIsPadha = () => {
             </h2>
             
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              PADHA is the utility token that powers the next generation of digital human avatars. 
-              Every minute of interaction burns a tiny amount of PADHA — paying for compute, 
+              PADHA is the utility token designed to power the next generation of digital human avatars.
+              Once live sessions begin, every minute of interaction will burn a tiny amount of PADHA — paying for compute,
               upgrades, and transparency on-chain.
             </p>
 
@@ -46,13 +46,18 @@ const WhatIsPadha = () => {
             </ul>
 
             {/* CTA Button */}
-            <button className="group relative px-8 py-4 rounded-xl font-medium overflow-hidden hover-glow">
+            <a
+              href="https://app.uniswap.org/swap?inputCurrency=ETH&outputCurrency=0x95dEeFCD64A97Af2c727595B3fB92C50d33e3CF9&chain=base"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative inline-block px-8 py-4 rounded-xl font-medium overflow-hidden hover-glow"
+            >
               <div className="absolute inset-0 border-2 border-aqua/50 rounded-xl group-hover:border-aqua transition-colors" />
               <div className="absolute inset-0 bg-aqua/0 group-hover:bg-aqua/10 transition-colors rounded-xl" />
               <span className="relative text-aqua group-hover:text-aqua-glow transition-colors font-semibold">
-                Learn More
+                Trade PADHA on Uniswap (Base)
               </span>
-            </button>
+            </a>
           </div>
 
           {/* Right Column - Highlight Card */}
@@ -76,9 +81,11 @@ const WhatIsPadha = () => {
                 
                 <div className="mt-8 pt-6 border-t border-border/50">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-aqua to-purple flex items-center justify-center">
-                      <Zap className="w-6 h-6 text-primary-foreground" />
-                    </div>
+                    <img
+                      src={`${import.meta.env.BASE_URL}Phaemas.png`}
+                      alt="Phaeton AI Logo"
+                      className="w-12 h-12 rounded-full"
+                    />
                     <div>
                       <p className="text-foreground font-medium">Phaeton AI</p>
                       <p className="text-muted-foreground text-sm">Infrastructure Provider</p>

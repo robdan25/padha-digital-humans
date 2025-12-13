@@ -5,17 +5,21 @@ const Footer = () => {
         <div className="flex flex-col items-center gap-6">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-aqua to-purple flex items-center justify-center">
-              <span className="text-primary-foreground font-heading font-bold text-sm">P</span>
-            </div>
+            <img
+              src={`${import.meta.env.BASE_URL}Master1024BlueR.png`}
+              alt="PADHA Logo"
+              className="w-8 h-8 rounded-lg"
+            />
             <span className="font-heading font-bold text-lg text-foreground">PADHA</span>
           </div>
 
           {/* Powered by */}
           <p className="text-muted-foreground text-sm flex items-center gap-2">
-            Powered by 
-            <a 
-              href="#" 
+            Powered by
+            <a
+              href="https://phaetonai.com/padha"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-aqua underline-glow hover:text-aqua-glow transition-colors"
             >
               Phaeton AI

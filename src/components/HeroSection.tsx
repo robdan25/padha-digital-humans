@@ -55,9 +55,15 @@ const HeroSection = () => {
             {/* Hero image fallback */}
             <img
               id="hero-image"
-              src={heroAvatar}
+              src={`${import.meta.env.BASE_URL}PHAE_land.png`}
               alt="Phae - PADHA Digital Human Avatar with futuristic aqua and purple holographic effects"
               className="w-full h-full object-cover transition-opacity duration-500"
+              onError={(e) => {
+                console.error('Image failed to load from:', (e.currentTarget as HTMLImageElement).src);
+              }}
+              onLoad={(e) => {
+                console.log('Image loaded successfully from:', (e.currentTarget as HTMLImageElement).src);
+              }}
             />
             
             {/* Overlay gradient for depth */}
@@ -73,9 +79,9 @@ const HeroSection = () => {
 
         {/* Caption under video */}
         <p className="text-center text-muted-foreground mt-8 text-base md:text-lg max-w-2xl mx-auto opacity-0 animate-fade-in-up delay-500">
-          Phae can <span className="text-primary glow-text-subtle">see you</span>, 
-          <span className="text-primary glow-text-subtle"> hear you</span>, and 
-          <span className="text-primary glow-text-subtle"> talk with you</span> — 
+          After BaseScan verification and internal checks, Phae will be able to <span className="text-primary glow-text-subtle">see you</span>,
+          <span className="text-primary glow-text-subtle"> hear you</span>, and
+          <span className="text-primary glow-text-subtle"> talk with you</span> in short real-time sessions —
           all powered by tiny PADHA micro-burns.
         </p>
       </div>

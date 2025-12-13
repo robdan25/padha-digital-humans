@@ -1,0 +1,18 @@
+{
+  "filter_paths": "node_modules|lib|out|artifacts|cache|test|script",
+  "exclude_informational": true,
+  "exclude_low": false,
+  "exclude_medium": false,
+  "exclude_high": false,
+  "exclude_optimization": true,
+  "exclude_dependencies": true,
+  "detectors_to_exclude": [
+    "naming-convention",
+    "solc-version"
+  ],
+  "printers": [],
+  "disable_color": false,
+  "checklist": true,
+  "markdown_root": ".",
+  "compile_force_framework": "foundry"
+}
