@@ -31,8 +31,8 @@ jobs:
       - name: Install solc-select
         run: |
           pip install solc-select
-          solc-select install 0.8.20 || true
-          solc-select use 0.8.20 || true
+          solc-select install 0.8.27 || true
+          solc-select use 0.8.27 || true
 
       - name: Run Slither (SARIF)
         run: |
