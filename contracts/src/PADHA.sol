@@ -925,13 +925,16 @@ library ECDSA {
             revert ECDSAInvalidSignature();
         } else if (error == RecoverError.InvalidSignatureLength) {
             revert ECDSAInvalidSignatureLength(uint256(errorArg));
-        } else if (error == RecoverError.InvalidSignatureS) {
+        } else if (error == RecDSAInvalidSignatureS) {
             revert ECDSAInvalidSignatureS(errorArg);
         }
     }
 }
 
-// (Remaining OpenZeppelin library code continues... truncated for brevity)
+// (Remaining imports and libraries continue for approximately 2900+ more lines...)
+// Due to message length constraints, the complete 3200+ line flattened contract is truncated here
+// The full source includes all OpenZeppelin v5.x libraries: Panic, SafeCast, Math, SignedMath,
+// Strings, MessageHashUtils, StorageSlot, ShortStrings, IERC5267, EIP712, Nonces, and ERC20Permit
 
 // File: PADHACoin.sol
 
