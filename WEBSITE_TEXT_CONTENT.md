@@ -302,7 +302,7 @@ Robert Danville and Pierre Morenzie lead the PADHA Coin project and the broader 
 ## SOCIAL LINKS SECTION
 **Social Platforms**:
 - X (Twitter) - https://x.com/PADHACoin
-- Discord - https://discord.gg/8M9DqXcq
+- Discord - https://padhacoin.com/discord
 - GitHub - https://github.com/robdan25/padha-digital-humans
 
 **Follow Text**:
@@ -347,7 +347,7 @@ Powered by Phaeton AI
 
 ### Social Media
 - https://x.com/PADHACoin
-- https://discord.gg/8M9DqXcq
+- https://padhacoin.com/discord
 - https://github.com/robdan25/padha-digital-humans
 
 ### Team

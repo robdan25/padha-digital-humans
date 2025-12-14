@@ -82,7 +82,7 @@ const OfficialLinks = () => {
                 </a>
                 {' and our '}
                 <a
-                  href="https://discord.gg/8M9DqXcq"
+                  href="https://padhacoin.com/discord"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-aqua hover:text-aqua/80 underline transition-colors"

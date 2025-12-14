@@ -3,7 +3,7 @@ import { Twitter, Github } from "lucide-react";
 const SocialLinks = () => {
   const socials = [
     { name: "X (Twitter)", icon: Twitter, url: "https://x.com/PADHACoin" },
-    { name: "Discord", icon: DiscordIcon, url: "https://discord.gg/8M9DqXcq" },
+    { name: "Discord", icon: DiscordIcon, url: "https://padhacoin.com/discord" },
     { name: "GitHub", icon: Github, url: "https://github.com/robdan25/padha-digital-humans" },
   ];
 

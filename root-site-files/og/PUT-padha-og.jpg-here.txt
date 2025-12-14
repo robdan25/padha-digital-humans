@@ -1,0 +1,12 @@
+INSTRUCTIONS:
+Place your 1200×630 JPG social card here named exactly: padha-og.jpg
+
+This image will be used for:
+- Open Graph previews (Facebook, LinkedIn, Discord, etc.)
+- Twitter/X card previews
+- Other social platforms
+
+Recommended image:
+Use the PADHA coin/halo image you posted on X, exported as 1200×630 JPG.
+
+Once uploaded to public_html/og/padha-og.jpg, delete this text file.

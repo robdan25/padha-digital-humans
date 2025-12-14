@@ -8,7 +8,7 @@ const EmailSubscribe = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!email || !email.includes("@")) {
       setStatus("error");
       setErrorMessage("Please enter a valid email address");
@@ -16,17 +16,30 @@ const EmailSubscribe = () => {
     }
 
     setStatus("loading");
-    
-    // Simulate API call - replace with actual endpoint
+
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      // POST to /subscribe endpoint when ready
-      // await fetch('/subscribe', { method: 'POST', body: JSON.stringify({ email }) });
-      setStatus("success");
-      setEmail("");
+      const response = await fetch(`${import.meta.env.BASE_URL}subscribe.php`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setStatus("success");
+        setEmail("");
+      } else {
+        setStatus("error");
+        setErrorMessage(data.message || "Something went wrong. Please try again.");
+        console.error('Email submission failed:', data);
+      }
     } catch (error) {
       setStatus("error");
-      setErrorMessage("Something went wrong. Please try again.");
+      setErrorMessage("Network error. Please check your connection and try again.");
+      console.error('Email submission error:', error);
     }
   };
 

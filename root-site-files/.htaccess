@@ -1,0 +1,5 @@
+DirectoryIndex index.html index.php default.php
+
+RewriteEngine On
+# Pretty redirect for Discord (use 302 while testing; switch to 301 when final)
+RewriteRule ^discord/?$ https://discord.gg/Vyz4D9Xm [R=302,L]
