@@ -5,7 +5,7 @@
   "exclude_medium": false,
   "exclude_high": false,
   "fail_on": "medium",
-  "filter_paths": "node_modules|dist|build|out|coverage|\.next|\.git|lib|vendor|artifacts|cache",
+  "filter_paths": "node_modules|dist|build|out|coverage|\\.next|\\.git|lib|vendor|artifacts|cache",
   "json": "slither-report.json",
   "sarif": "slither-report.sarif",
   "disable_color": true
