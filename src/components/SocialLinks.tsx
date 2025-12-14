@@ -3,8 +3,7 @@ import { Twitter, Github } from "lucide-react";
 const SocialLinks = () => {
   const socials = [
     { name: "X (Twitter)", icon: Twitter, url: "https://x.com/PADHACoin" },
-    // TODO: Replace YOUR_INVITE_CODE_HERE with actual Discord invite code
-    { name: "Discord", icon: DiscordIcon, url: "https://discord.gg/YOUR_INVITE_CODE_HERE" },
+    { name: "Discord", icon: DiscordIcon, url: "https://discord.gg/8M9DqXcq" },
     { name: "GitHub", icon: Github, url: "https://github.com/robdan25/padha-digital-humans" },
   ];
 
