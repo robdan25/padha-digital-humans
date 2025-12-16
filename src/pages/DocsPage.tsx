@@ -90,12 +90,15 @@ const DocsPage = () => {
         <main className="relative z-10 pt-24 pb-16 px-6">
           <div className="container mx-auto max-w-4xl">
             <h1 className="text-center font-heading font-bold text-4xl md:text-5xl text-foreground mb-6">
-              Docs & Technical Overview
+              Docs & Technical Overview — PADHA Coin
             </h1>
 
-            <p className="text-muted-foreground text-lg mb-12 text-center">
-              This page summarizes the key technical and economic properties of PADHA Coin on Base.
-              It is meant to help explorers, integrators, and users verify they are interacting with the correct contract.
+            <p className="text-muted-foreground text-lg mb-4 text-center">
+              This page helps explorers, integrators, and users verify official PADHA Coin information.
+            </p>
+
+            <p className="text-muted-foreground text-sm mb-12 text-center opacity-70">
+              Last updated: 2025-12-16
             </p>
 
             <div className="space-y-8">
@@ -309,9 +312,127 @@ const DocsPage = () => {
                   </li>
                 </ul>
               </div>
+
+              {/* 8. Team & Company */}
+              <div className="glass-card rounded-2xl p-8">
+                <h2 className="font-heading font-bold text-2xl text-foreground mb-4">
+                  8. Team & Company
+                </h2>
+                <h3 className="font-semibold text-foreground text-lg mb-3">
+                  Robert Danville & Pierre Morenzie – Co-Founders, PADHA Coin & Phaeton AI
+                </h3>
+                <p className="text-muted-foreground mb-6">
+                  Robert Danville and Pierre Morenzie lead the PADHA Coin project and the broader Phaeton AI ecosystem, combining product vision, AI engineering, and smart-contract expertise to build practical AI tools and digital human avatars.
+                </p>
+
+                <h4 className="font-semibold text-foreground mb-3">Verification & profiles:</h4>
+                <ul className="space-y-2 text-muted-foreground mb-6">
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/in/robert-danville-3971b3336/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-aqua hover:text-aqua/80 underline"
+                    >
+                      LinkedIn
+                    </a>
+                  </li>
+                  <li>
+                    <strong className="text-foreground">Company:</strong> Phaeton AI Inc – registered in Canada
+                    <br />
+                    <a
+                      href="https://www.canadacompanyregistry.com/company?utm_source=phaeton-ai-inc"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-aqua hover:text-aqua/80 underline"
+                    >
+                      Public record
+                    </a>
+                  </li>
+                </ul>
+
+                <h4 className="font-semibold text-foreground mb-3">Official sites:</h4>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li>
+                    <a href="https://padhacoin.com/early/" target="_blank" rel="noopener noreferrer" className="text-aqua hover:text-aqua/80 underline">
+                      PADHACoin.com
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://phaetonai.com/padha" target="_blank" rel="noopener noreferrer" className="text-aqua hover:text-aqua/80 underline">
+                      PhaetonAI.com
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              {/* 9. Social Links */}
+              <div className="glass-card rounded-2xl p-8">
+                <h2 className="font-heading font-bold text-2xl text-foreground mb-4">
+                  9. Social Links
+                </h2>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li>
+                    <strong className="text-foreground">X (Twitter):</strong>{' '}
+                    <a href="https://x.com/PADHACoin" target="_blank" rel="noopener noreferrer" className="text-aqua hover:text-aqua/80 underline">
+                      @PADHACoin
+                    </a>
+                  </li>
+                  <li>
+                    <strong className="text-foreground">Discord:</strong>{' '}
+                    <a href="https://padhacoin.com/discord" target="_blank" rel="noopener noreferrer" className="text-aqua hover:text-aqua/80 underline">
+                      padhacoin.com/discord
+                    </a>
+                  </li>
+                  <li>
+                    <strong className="text-foreground">GitHub:</strong>{' '}
+                    <a href="https://github.com/robdan25/padha-digital-humans" target="_blank" rel="noopener noreferrer" className="text-aqua hover:text-aqua/80 underline">
+                      github.com/robdan25/padha-digital-humans
+                    </a>
+                  </li>
+                </ul>
+                <p className="text-center text-muted-foreground text-sm mt-6">
+                  Follow us everywhere: <span className="text-aqua">@PADHACoin</span>
+                </p>
+              </div>
             </div>
           </div>
         </main>
+
+        {/* Footer */}
+        <footer className="relative z-10 py-12 px-6 border-t border-border/30">
+          <div className="container mx-auto max-w-4xl">
+            <div className="flex flex-col items-center gap-6">
+              {/* Logo */}
+              <div className="flex items-center gap-2">
+                <img
+                  src={`${import.meta.env.BASE_URL}Master1024BlueR.png`}
+                  alt="PADHA Logo"
+                  className="w-8 h-8 rounded-lg"
+                />
+                <span className="font-heading font-bold text-lg text-foreground">PADHA</span>
+              </div>
+
+              {/* Powered by */}
+              <p className="text-muted-foreground text-sm flex items-center gap-2">
+                Powered by
+                <a
+                  href="https://phaetonai.com/padha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-aqua hover:text-aqua/80 underline transition-colors"
+                >
+                  Phaeton AI
+                </a>
+              </p>
+
+              {/* Copyright */}
+              <p className="text-muted-foreground/60 text-xs">
+                © 2025 PADHA Coin. All rights reserved.
+              </p>
+            </div>
+          </div>
+        </footer>
 
         {/* Background gradient orbs */}
         <div className="absolute top-1/4 right-0 w-64 h-64 bg-aqua/10 rounded-full blur-3xl pointer-events-none" />
