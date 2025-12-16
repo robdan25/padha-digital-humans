@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -11,14 +12,6 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
-    e.preventDefault();
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -28,7 +21,7 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-3 group">
+        <Link to="/" className="flex items-center gap-3 group">
           <div className="relative">
             <img
               src={`${import.meta.env.BASE_URL}Master1024BlueR.png`}
@@ -39,16 +32,15 @@ const Header = () => {
           <span className="font-heading font-bold text-2xl tracking-tight">
             <span className="text-foreground">PADHA</span>
           </span>
-        </a>
+        </Link>
 
         <nav className="hidden md:flex items-center gap-6">
-          <a
-            href="#docs"
-            onClick={(e) => scrollToSection(e, 'docs')}
+          <Link
+            to="/docs"
             className="text-muted-foreground hover:text-aqua transition-colors font-medium"
           >
             Docs
-          </a>
+          </Link>
         </nav>
       </div>
     </header>
